@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon_Index</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="jumbotron text-center text-success">
+        <h1> Pokemon_圖鑑列表 </h1>
+    </div>
+
+    <div class="text-center">
+        <button id="btn1" class="btn btn-primary">Pokemon_1</button>
+        <button id="btn2" class="btn btn-primary">Pokemon_2</button>
+        <button id="btn3" class="btn btn-danger">Reset</button>
+    </div>
+
+    <div id='container'>
+        <!-- <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png" alt=""> -->
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+
+    <script>
+
+        var btn1 = document.getElementById("btn1");
+        btn1.onclick = function(event){      
+            container.innerHTML = "";
+            let pokemons = '';
+            for(let i=1; i<=898; i++){
+                let fileName = i.toString().padStart(3, '0');
+                let pathfile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
+                let pokemonImg = `<img src='${pathfile}'>`;
+                pokemons += pokemonImg;
+            }
+            container.innerHTML = pokemons;
+        }
+
+        var btn2 = document.getElementById("btn2");
+        btn2.addEventListener('click', function(event){
+            container.innerHTML="";
+            for(let i=1; i<=898; i++){
+                let fileName = i.toString().padStart(3,'0');
+                let pathfile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
+                let img = document.createElement('img');
+                img.setAttribute('src', pathfile);
+                container.appendChild(img);
+            }
+        });
+
+        var btn3 = document.getElementById("btn3");
+        btn3.addEventListener('click', function(event){
+            container.innerHTML = "";
+        });
+
+    </script>
+    
+</body>
+</html>
