@@ -1,0 +1,58 @@
+body{
+    background-color:black;
+}
+.title1{
+    margin: auto;
+    text-align: center;
+    color: tomato;
+    border: 2px solid tomato;
+    width: 20%;
+    height: 80px;
+    line-height: 80px;
+    font-size: 40px;
+    
+}
+
+.show_message p{
+    margin:auto;
+    text-align: center;
+    border: 2px solid yellow;
+    width: 30%;
+    height: 100px;
+    line-height: 100px;
+    color: orchid;
+    font-size: 40px;
+}
+
+.game{
+    margin: auto;
+    text-align: center;
+}
+
+.game .my-3{
+    font-size: 25px;
+    text-align: center;
+}
+
+.keyin_button {
+    width: 20%;
+    margin:auto;
+    text-align: center;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    border: 2px solid yellowgreen;
+}
+
+.grid-item {
+    padding: 10px;
+    font-size: 24px;
+    text-align: center;
+    border: 2px solid yellowgreen;
+    background-color:black;
+    color:tomato;
+}
+
+.keyin_button button:hover {
+    color:tomato;
+    background-color:pink;
+}
