@@ -45,14 +45,21 @@ body{
 
 .grid-item {
     padding: 10px;
-    font-size: 24px;
+    font-size: 25px;
     text-align: center;
     border: 2px solid yellowgreen;
     background-color:black;
-    color:tomato;
+    color:yellow;
+}
+
+.grid-item.no{
+    color: red;
+}
+
+.grid-item.yes{
+    color: teal;
 }
 
 .keyin_button button:hover {
-    color:tomato;
-    background-color:pink;
+    background-color:purple;
 }
