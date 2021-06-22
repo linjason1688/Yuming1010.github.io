@@ -45,11 +45,11 @@ body{
 
 .grid-item {
     padding: 10px;
-    font-size: 25px;
+    font-size: 26px;
     text-align: center;
     border: 2px solid yellowgreen;
     background-color:black;
-    color:yellow;
+    color:orange;
 }
 
 .grid-item.no{
@@ -57,7 +57,7 @@ body{
 }
 
 .grid-item.yes{
-    color: teal;
+    color:turquoise;
 }
 
 .keyin_button button:hover {

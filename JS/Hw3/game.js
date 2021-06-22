@@ -1,6 +1,6 @@
 let answer=0;
-let min;
-let max;
+let min=0;
+let max=100;
 let guess_number = document.getElementById("guess_number");
 
 const  no = document.getElementById("X");
@@ -29,7 +29,6 @@ start.addEventListener('click', function(){
     while(answer <= 0){
         answer = Math.floor(Math.random()*100);
     }
-    console.log(answer);
     keyin_array.forEach(function(item){
         let button = document.getElementById(item);
         button.disabled = false;
@@ -70,24 +69,31 @@ yes.addEventListener('click', function(){
 
     if(input == "") {
         hint.innerHTML="未輸入任何數字";
+        guess_number.value = "";
+    }
+
+    else if(input<= min || input>=max){
+        hint.innerHTML = "猜" + input + ".. 超出範圍了~";
+        guess_number.value = "";
     }
 
     else if(input == answer){
-        hint.innerHTML = "恭 喜 過 關 !";
+        status.innerHTML = min + " < (" + input + ") < " + max;
+        hint.innerHTML = "猜" + input + ".. 恭喜過關!";
         guess_number.value = "";
     }
 
     else if( input > answer){
         max = input;
         status.innerHTML = min + " < input < " + max;
-        hint.innerHTML = "猜的太大了~";
+        hint.innerHTML = "猜" + input + ".. 太大了~";
         guess_number.value = "";
     }
 
     else if( input < answer ) {
         min = input;
         status.innerHTML = min + " < input < " + max;
-        hint.innerHTML = "猜的太小了~";
+        hint.innerHTML = "猜" + input + ".. 太小了~";
         guess_number.value = "";
     }
 });
