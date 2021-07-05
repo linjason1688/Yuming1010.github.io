@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <title>iPad</title>
+
+    <style>
+        .form-selector-label {
+            width: 180px;
+            height: 60px;
+            border-radius: 12px;
+            margin: 10px;
+        }
+
+        .circle1 {
+            margin: auto;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: gray;
+        }
+
+        .circle2 {
+            margin: auto;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: silver;
+        }
+
+        .circle3 {
+            margin: auto;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: pink;
+        }
+
+        .circle4 {
+            margin: auto;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: yellowgreen;
+        }
+
+        .circle5 {
+            margin: auto;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: skyblue;
+        }
+
+        .color_select {
+            background-color: wheat;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="bg-dark text-center">
+        <button class="btn btn-dark fs-2"><i class="fab fa-apple"></i></button>
+        <button class="btn btn-dark fs-2 text">iPad</button>
+    </div> <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6" id="left"> </div>
+            <div class="col-12 col-md-6" id="right"> </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+
+    <template id='chooseBtn'>
+        <button class="form-selector-label">
+            <div></div>
+            <h5></h5>
+        </button>
+    </template>
+
+    <script type='module'>
+        import { $g, $c } from './module/helper.js';
+        const url = "https://raw.githubusercontent.com/Yuming1010/FileStorage/main/iPadAir.json";
+        let ipadArray = [];
+        let xhr = new XMLHttpRequest();
+
+        window.onload = function() {
+            request_ipad();
+        }
+
+        function request_ipad() {
+            xhr.onload = function () {
+                ipadArray = JSON.parse(this.responseText);
+                console.log(ipadArray);
+                color(ipadArray);
+                storage(ipadArray);
+                network(ipadArray);
+            }
+            xhr.open('GET', url);
+            xhr.send();
+        }
+
+        function color(item) {
+            let chooseBtn = $g('#chooseBtn');
+            div2.setAttribute('class', 'collapse.show');
+            for (let i = 0; i < 5; i++) {
+                let clonebtn = chooseBtn.content.cloneNode(true);
+                let btn = clonebtn.querySelector('button');
+                clonebtn.querySelector('h5').innerHTML = `${item[i].color}`;
+                clonebtn.querySelector('div').classList.add(`circle${i + 1}`);
+                btn.addEventListener('click', function () {
+                    img_left.src = `iPad/${item[i].picture}`;
+                    p1.innerHTML = `${item[i].color} `;
+                    _color = `${item[i].color}`;
+                    p1.appendChild(a1);
+                    div2.setAttribute('class', 'collapse');
+                    Price();
+                });
+                div2.appendChild(clonebtn);
+            }
+            p1.addEventListener('click', function () {
+                p1.innerHTML = '外觀';
+                div2.setAttribute('class', 'collapse.show');
+            });
+            let collapse_Color = document.getElementById("collapse_Color");
+            let collor_all = collapse_Color.querySelectorAll('button');
+            collor_all.forEach(function (item) {
+                item.addEventListener('click', () => {
+                    collor_all.forEach(x => x.classList.remove('color_select'));
+                    item.classList.add('color_select');
+                })
+            });
+        }
+
+        function storage(item) {
+            let chooseBtn = $g('#chooseBtn');
+            div3.setAttribute('class', 'collapse.show');
+            for (let i = 0; i < 2; i++) {
+                let clonebtn = chooseBtn.content.cloneNode(true);
+                let btn = clonebtn.querySelector('button');
+                if (i == 0) {
+                    clonebtn.querySelector('h5').innerHTML = '64GB';
+                }
+                if (i == 1) {
+                    clonebtn.querySelector('h5').innerHTML = '256GB';
+                }
+                btn.addEventListener('click', function () {
+                    if (i == 0) {
+                        p2.innerHTML = `${item[0].storage} `;
+                        _storage = `${item[0].storage}`;
+                    }
+                    if (i == 1) {
+                        p2.innerHTML = `${item[10].storage} `;
+                        _storage = `${item[10].storage}`;
+                    }
+                    p2.appendChild(a2);
+                    div3.setAttribute('class', 'collapse');
+                    Price();
+                });
+                div3.appendChild(clonebtn);
+            }
+            p2.addEventListener('click', function () {
+                p2.innerHTML = '儲存空間';
+                div3.setAttribute('class', 'collapse.show');    
+            });
+            let collapse_Storage = document.getElementById("collapse_Storage");
+            let storage_all = collapse_Storage.querySelectorAll('button');
+            storage_all.forEach(function (item) {
+                item.addEventListener('click', () => {
+                    storage_all.forEach(x => x.classList.remove('color_select'));
+                    item.classList.add('color_select');
+                })
+            });
+        }
+
+        function network(item) 
+        {
+            let chooseBtn = $g('#chooseBtn');
+            div4.setAttribute('class', 'collapse.show');
+            for (let i = 0; i < 2; i++) 
+            {
+                let clonebtn = chooseBtn.content.cloneNode(true);
+                let btn = clonebtn.querySelector('button');
+                if (i == 0) {
+                    clonebtn.querySelector('h5').innerHTML = 'Wi-Fi';
+                }
+                if (i == 1) {
+                    clonebtn.querySelector('h5').innerHTML = 'Wi-Fi + 行動網路';
+                }
+                btn.addEventListener('click', function () {
+                    if (i == 0) {
+                        p3.innerHTML = `Wi-Fi `;
+                        _network = `${item[0].network}`;
+                    }
+                    if (i == 1) {
+                        p3.innerHTML = `Wi-Fi + 行動網路 `;
+                        _network = `${item[5].network}`;
+                    }
+                    p3.appendChild(a3);
+                    div4.setAttribute('class', 'collapse');
+                    Price();
+                });
+                div4.appendChild(clonebtn);
+            }
+            p3.addEventListener('click', function () {
+                p3.innerHTML = '連線能力';
+                div4.setAttribute('class', 'collapse.show');
+            });
+            let collapse_Network = document.getElementById("collapse_Storage");
+            let network_all = collapse_Network.querySelectorAll('button');
+            network_all.forEach(function(item) {
+                item.addEventListener('click', () => {
+                    network_all.forEach(x => x.classList.remove('color_select'));
+                    item.classList.add('color_select');
+                })
+            });
+        }
+        let img_space = document.getElementById('left');
+        let img_left = document.createElement('img');
+        img_left.src = `iPad/0.png`;
+        img_left.setAttribute('class', 'w-100');
+        img_left.setAttribute('id', 'img');
+        img_space.appendChild(img_left);
+        let hr = document.createElement('hr');
+        let right = document.getElementById('right');
+        let h1 = document.createElement('h1');
+        h1.innerHTML = '<strong>購買 iPad Air</strong>';
+        right.appendChild(h1);
+        right.appendChild(hr);
+        let div1 = document.createElement('div');
+        div1.classList.add('btnArea');
+        right.appendChild(div1);
+        let p1 = document.createElement('p');
+        p1.id = 'chooseColor';
+        p1.classList.add('fs-2');
+        p1.innerHTML = '外觀';
+        let a1 = document.createElement('a');
+        a1.innerHTML = '更改';
+        a1.setAttribute('data-bs-toggle', 'collapse');
+        a1.setAttribute('href', '#collapse_color');
+        div1.appendChild(p1);
+        let div2 = document.createElement('div');
+        div2.setAttribute('class', 'collapse');
+        div2.id = 'collapse_Color';
+        div1.appendChild(div2);
+        let hr1 = document.createElement('hr');
+        div1.appendChild(hr1);
+        let p2 = document.createElement('p');
+        p2.id = 'chooseStorage';
+        p2.classList.add('fs-2');
+        p2.innerHTML = '儲存空間';
+        let a2 = document.createElement('a');
+        a2.innerHTML = '更改';
+        a2.setAttribute('data-bs-toggle', 'collapse');
+        a2.setAttribute('href', '#collapse_Storage');
+        div1.appendChild(p2);
+        let div3 = document.createElement('div');
+        div3.setAttribute('class', 'collapse');
+        div3.id = 'collapse_Storage';
+        div1.appendChild(div3);
+        let hr3 = document.createElement('hr');
+        div1.appendChild(hr3);
+        let p3 = document.createElement('p');
+        p3.id = 'chooseNetwork';
+        p3.classList.add('fs-2');
+        p3.innerHTML = '連線能力';
+        let a3 = document.createElement('a');
+        a3.innerHTML = '更改';
+        a3.setAttribute('data-bs-toggle', 'collapse');
+        a3.setAttribute('href', '#collapse_Network');
+        div1.appendChild(p3);
+        let div4 = document.createElement('div');
+        div4.setAttribute('class', 'collapse');
+        div4.id = 'collapse_Network';
+        div1.appendChild(div4);
+        let hr4 = document.createElement('hr');
+        div1.appendChild(hr4);
+        let p4 = document.createElement('p');
+        p4.id = 'price';
+        p4.classList.add('fs-2');
+        p4.innerHTML = '價格';
+        div1.appendChild(p4);
+        let hr5 = document.createElement('hr');
+        div1.appendChild(hr5);
+
+        let _color, _storage, _network, price;
+        price = document.querySelector('#price');
+        function Price(){
+            if( _color== undefined || _storage==undefined || _network==undefined){
+                price.innerHTML = '價格';
+                return;
+            }
+            let show=ipadArray.filter(x=>x.color==_color&&x.storage==_storage&&x.network==_network)[0].price;
+            price.innerHTML = `價格: ${show} 元`;
+        }
+
+    </script>
+    
+</body>
+
+</html>
