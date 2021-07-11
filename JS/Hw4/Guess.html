@@ -133,7 +133,6 @@
 
         btn_answer.addEventListener('click', function () {
             hint1.innerText = `答案是: ${answer}`;
-            console.log(`答案是: ${answer}`);
         });
 
         ok.addEventListener('click', function () {
@@ -146,8 +145,6 @@
             guess_number.value ='';
 
             player = input.toString().split('');
-            console.log(player);
-            console.log(answer);
 
             let check1 = 1;
             let check2 = 1;
