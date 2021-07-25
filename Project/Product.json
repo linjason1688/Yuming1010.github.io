@@ -1,0 +1,64 @@
+[
+    {
+        "Category":"電視遊戲",
+        "SubCategory":"PS5",
+        "Products":
+        [
+            { 
+                "Product":"惡魔靈魂", 
+                "Day": 10, 
+                "Week": 50, 
+                "Month": 180
+            },
+
+            {
+                "Product":"極地戰嚎6", 
+                "Day": 5, 
+                "Week": 30, 
+                "Month": 100
+            }
+        ]
+    },
+
+    {
+        "Category":"電視遊戲",
+        "SubCategory":"Switch",
+        "Products":
+        [
+            {
+                "Product":"薩爾達傳說",
+                "Day": 20,
+                "Week": 100,
+                "Month": 300
+            },
+
+            {
+                "Product":"動物森友會",
+                "Day": 8,
+                "Week": 40,
+                "Month": 150
+            }
+        ]
+    },
+
+    {
+        "Category":"電視遊戲",
+        "SubCategory":"遊戲主機",
+        "Products":
+        [
+            {
+                "Product":"PS5主機",
+                "Day": 4,
+                "Week": 20,
+                "Month": 70
+            },
+
+            {
+                "Product":"Switch主機",
+                "Day": 3,
+                "Week": 15,
+                "Month": 50
+            }
+        ]
+    }
+]
