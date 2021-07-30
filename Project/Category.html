@@ -112,33 +112,41 @@
 
         .card {
             display: flex;
-            flex-direction: row;
-            width:30%;
-            margin:14px;
+            flex-wrap: wrap;
+            background-color: #f9f9f9;
+            border:transparent;
+            /* flex-direction: column; */
         }
 
+        .box-in{
+            /* background-color: #ffffff; */
+            border:transparent;
+        }
 
         .items {
             display: flex;
-            flex-direction: row;
+            /* flex-direction: column; */
             align-items: center;
+            background-color: #ffffff;
+            border: 1px solid rgb(221, 226, 230);
+            border-radius: 0.4rem;
         }
 
         .items img {
-            width:100%;
+            width:92%;
         }
 
         .items a{
-            width: 50%;
+            width: 100%;
             text-decoration: none;
             color:black;
-            font-size: 20px;
+            font-size: 17px;
+            display: flex;
         }
 
         .items a:hover{
             text-decoration: underline;
             color:tomato;
-            
         }
 
     </style>
@@ -228,7 +236,7 @@
             </div>
 
             <!-- Right -->
-            <div class="col-lg-9 col-12 px-2 px-lg-4 mb-4 mx-0 right">
+            <div class="col-lg-9 col-12 px-2 px-lg-4 mb-4 right">
                 <div class="col-12 mt-lg-3 px-3">
                     <h2>All Categories</h2>
                 </div>
@@ -236,66 +244,80 @@
                 <div class="box">
 
                     <div class="col-6 col-md-4 col-lg-4 d-flex my-2 card">
-                        <a href="#">
-                            <div class="items">
-                                <img src="https://picsum.photos/800/800/?random=1">
-                                <a href="#">交通工具</a>
-                            </div>
-                        </a>
+                        <div class="mx-2 box-in">
+                            <a href="#">
+                                <div class="items">
+                                    <img src="https://picsum.photos/800/800/?random=1">
+                                    <a href="#">交通工具</a>
+                                </div>
+                            </a>
+                        </div>
                     </div>
 
                     <div class="col-6 col-md-4 col-lg-4 d-flex my-2 card">
-                        <a href="#">
-                            <div class="items">
-                                <img src="https://picsum.photos/800/800/?random=2">
-                                <a href="#">人才</a>
-                            </div>
-                        </a>
+                        <div class="mx-2 box-in">
+                            <a href="#">
+                                <div class="items">
+                                    <img src="https://picsum.photos/800/800/?random=2">
+                                    <a href="#">人才</a>
+                                </div>
+                            </a>
+                        </div>
                     </div>
 
-                    <div class="col-6 col-md-4 col-lg-4 d-flex my-2 card">
-                        <a href="#">
-                            <div class="items">
-                                <img src="https://picsum.photos/800/800/?random=3">
-                                <a href="#">寵物</a>
-                            </div>
-                        </a>
+                    <div class="col-6 col-md-4 col-lg-4 d-flex mx-0 my-2 card">
+                        <div class="mx-2 box-in">
+                            <a href="#">
+                                <div class="items">
+                                    <img src="https://picsum.photos/800/800/?random=3">
+                                    <a href="#">寵物</a>
+                                </div>
+                            </a>
+                        </div>
                     </div>
 
-                    <div class="col-6 col-md-4 col-lg-4 d-flex my-2 card">
-                        <a href="#">
-                            <div class="items">
-                                <img src="https://picsum.photos/800/800/?random=4">
-                                <a href="#">飾品美妝</a>
-                            </div>
-                        </a>
+                    <div class="col-6 col-md-4 col-lg-4 d-flex mx-0 my-2 card">
+                        <div class="mx-2 box-in">
+                            <a href="#">
+                                <div class="items">
+                                    <img src="https://picsum.photos/800/800/?random=4">
+                                    <a href="#">飾品美妝</a>
+                                </div>
+                            </a>
+                        </div>
                     </div>
 
-                    <div class="col-6 col-md-4 col-lg-4 d-flex my-2 card">
-                        <a href="#">
-                            <div class="items">
-                                <img src="https://picsum.photos/800/800/?random=5">
-                                <a href="#">電視遊戲</a>
-                            </div>
-                        </a>
+                    <div class="col-6 col-md-4 col-lg-4 d-flex mx-0 my-2 card">
+                        <div class="mx-2 box-in">
+                            <a href="#">
+                                <div class="items">
+                                    <img src="https://picsum.photos/800/800/?random=5">
+                                    <a href="#">電視遊戲</a>
+                                </div>
+                            </a>
+                        </div>
                     </div>
 
-                    <div class="col-6 col-md-4 col-lg-4 d-flex my-2 card">
-                        <a href="#">
-                            <div class="items">
-                                <img src="https://picsum.photos/800/800/?random=6">
-                                <a href="#">桌遊</a>
-                            </div>
-                        </a>
+                    <div class="col-6 col-md-4 col-lg-4 d-flex mx-0 my-2 card">
+                        <div class="mx-2 box-in">
+                            <a href="#">
+                                <div class="items">
+                                    <img src="https://picsum.photos/800/800/?random=6">
+                                    <a href="#">桌遊</a>
+                                </div>
+                            </a>
+                        </div>
                     </div>
 
-                    <div class="col-6 col-md-4 col-lg-4 d-flex my-2 card">
-                        <a href="#">
-                            <div class="items">
-                                <img src="https://picsum.photos/800/800/?random=7">
-                                <a href="#">書籍</a>
-                            </div>
-                        </a>
+                    <div class="col-6 col-md-4 col-lg-4 d-flex mx-0 my-2 card">
+                        <div class="mx-2 box-in">
+                            <a href="#">
+                                <div class="items">
+                                    <img src="https://picsum.photos/800/800/?random=7">
+                                    <a href="#">書本</a>
+                                </div>
+                            </a>
+                        </div>
                     </div>
 
                 </div>
