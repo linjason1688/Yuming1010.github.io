@@ -28,9 +28,9 @@
     <title> Ruckify </title>
 
     <style>
-        *{
-            padding:0;
-            margin:0;
+        * {
+            padding: 0;
+            margin: 0;
             list-style: none;
         }
 
@@ -38,14 +38,24 @@
             background-color: #f9f9f9;
         }
 
+        .bigbox {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
         .row {
-            margin: 20px 155px;
-            border: 1px solid;
+            margin: 0 auto;
         }
 
         .left {
+            /* width: 25%; */
+            /* max-width: 1200px; */
             background-color: #ffffff;
         }
+
+        /* .right {
+            max-width: 1200px;
+        } */
 
         .group {
             margin: 5px 6px;
@@ -56,6 +66,26 @@
             height: 35px;
             text-align: center;
             text-align-last: center;
+            border-radius: 0.4rem;
+            border-color:rgb(221, 226, 230);
+            background-color: #ffffff;
+            
+        }
+
+        .input_text:focus{
+            border-color: rgba(252, 141, 97, 1);
+            
+        }
+
+        .btn_clear{
+            width: 25%;
+            height: 35px;
+            text-align: center;
+            text-align-last: center;
+            border-radius: 0.4rem;
+            border-color:rgb(221, 226, 230);
+            background-color: #ffffff;
+            font-size: 12px;
         }
 
         .distence {
@@ -67,7 +97,7 @@
             width: 100%;
         }
 
-        .filter_result{
+        .filter_result {
             width: 100%;
             height: 36px;
             text-align: center;
@@ -75,250 +105,363 @@
             color: #FFFFFF;
         }
 
-        .box{
-            width: 100%;
-            display:flex;
+        .box {
+            display: flex;
             flex-wrap: wrap;
         }
 
-        .item{
-            width:23%;
-            /* border: 1px solid rgb(222,226,230); */
-            margin: 6px;
-            padding: 5px;
-            text-align:center;
+        .card {
+            background-color: #f9f9f9;
+            border: transparent;
+
         }
 
-        .item .img_box{
-            background-color: rgb(249,249,249);
-            border: 1px solid rgb(222,226,230);
-            width:100%;
+        .item {
+            flex-direction: column;
+            text-align: left;
         }
 
-        .item img{
-            width:100%;
+        .item .img_box {
+            background-color: rgb(249, 249, 249);
+            border: 1px solid rgb(222, 226, 230);
+            border-radius: 0.4rem;
+            width: 100%;
         }
 
-        .item a{
+        .item img {
+            width: 100%;
+        }
+
+        .item a {
             font-size: 18px;
+            text-decoration: none;
+            color: black;
+        }
+
+        .item a:hover {
             text-decoration: underline;
-            color:black;
+            color: tomato;
+        }
+
+        .item i {
+            font-size: 12px;
+        }
+
+        .item .text{
+            display: flex;
+            flex-direction: column;
+            margin: 10px 0 0;
+        }
+
+        .item .text p{
+            display: inline;
+            font-size: 13px;
+            margin:0;
+        }
+
+        .item .text a{
+            display: inline;
+            font-size: 17px;
+            margin:0;
+        }
+
+        .star{
+            margin: 0 0 10px 0;
+            display: inline-flex;
         }
     </style>
 </head>
 
 <body>
-    <div class="row">
+    <div class="bigbox">
 
-        <!-- Left -->
-        <div class="col-md-3 col-lg-3 left">
+        <div class="row pt-lg-3">
 
-            <form action="">
-                <div class="group">
-                    <label for="Search" class="distence">
-                        <strong>Search</strong>
-                    </label> <br>
+            <!-- Left -->
+            <div class="col-lg-3 px-2 mx-0 left">
 
-                    <input type="text" id="Search" class="input_text distence" placeholder="Item Name or Space">
-                    <select name="Category" id="Category" class="input_text distence">
-                        <option value="0">Select a Category</option>
-                        <option value="1">交通工具</option>
-                        <option value="2">人才</option>
-                        <option value="3">寵物</option>
-                        <option value="4">飾品美妝</option>
-                        <option value="5" selected="selected">電視遊戲</option>
-                        <option value="6">桌遊</option>
-                    </select>
+                <form action="">
+                    <div class="group">
+                        <label for="Search" class="distence">
+                            <strong>Search</strong>
+                        </label> <br>
 
-                    <select name="SubCategory" id="SubCategory" class="input_text distence">
-                        <option value="0">Select a Sub-Category</option>
-                        <option value="1">PS5-遊戲片</option>
-                        <option value="2">Switch-遊戲片</option>
-                        <option value="3">遊戲主機</option>
-                    </select>
+                        <input type="text" id="Search" class="input_text distence" placeholder="Item Name or Space">
+                        <select name="Category" id="Category" class="input_text distence">
+                            <option value="0">Select a Category</option>
+                            <option value="1">交通工具</option>
+                            <option value="2">人才</option>
+                            <option value="3">寵物</option>
+                            <option value="4">飾品美妝</option>
+                            <option value="5" selected="selected">電視遊戲</option>
+                            <option value="6">桌遊</option>
+                        </select>
+
+                        <select name="SubCategory" id="SubCategory" class="input_text distence">
+                            <option value="0">Select a Sub-Category</option>
+                            <option value="1">PS5-遊戲片</option>
+                            <option value="2">Switch-遊戲片</option>
+                            <option value="3">遊戲主機</option>
+                        </select>
+                    </div>
+
+                    <div class="group">
+                        <label for="Location" class="distence">
+                            <strong>Location</strong>
+                        </label> <br>
+                        <input type="button" id="Location" class="input_text distence" value="新竹 Hsinchu" readonly>
+                        <div id="map" class="distence"> </div>
+                    </div>
+
+                    <div class="group">
+                        <label for="Sort-by" class="distence">
+                            <strong>Sort by</strong>
+                        </label> <br>
+                        <input type="radio" id="relevance" name="Sort-by" value="Relevance">
+                        <label for="relevance">Relevance</label><br>
+
+                        <input type="radio" id="price" name="Sort-by" value="Price">
+                        <label for="price">Price</label><br>
+
+                        <input type="radio" id="distance" name="Sort-by" value="Distance">
+                        <label for="distance">Distance</label><br>
+                    </div>
+
+                    <div class="group">
+                        <label for="Condition" class="distence">
+                            <strong>Condition</strong>
+                        </label> <br>
+
+                        <input type="checkbox" id="check1" name="check1" value="JustLikeNew">
+                        <label for="check1">Just Like New</label><br>
+
+                        <input type="checkbox" id="check2" name="check2" value="GentlyLoved">
+                        <label for="check2">Gently Loved</label><br>
+
+                        <input type="checkbox" id="check3" name="check3" value="Decent">
+                        <label for="check3">Decent</label><br>
+
+                        <input type="checkbox" id="check4" name="check4" value="HasSomeCharacter">
+                        <label for="check4">Has Some Character</label><br>
+                    </div>
+
+                    <div class="group">
+                        <label for="Budget" class="distence">
+                            <strong>Budget</strong>
+                        </label> <br>
+                        <select name="Rate" id="Rate" class="input_text distence">
+                            <option value="0">Type of Rate</option>
+                            <option value="1">Hourly</option>
+                            <option value="2">Daily</option>
+                            <option value="3">Weekly</option>
+                            <option value="4">Monthly</option>
+                        </select>
+                        <input type="reset" value="Clear Filters" class="btn_clear distence"> <br>
+                        <input type="submit" value="Filter My Results" class="distence filter_result">
+                    </div>
+                </form>
+            </div>
+
+            <!-- Right -->
+            <div class="col-lg-9 col-12 px-2 px-lg-4 mb-4 mx-0 right">
+                <div class="col-12 mt-lg-3 px-3">
+                    <h2>電視遊戲</h2>
                 </div>
 
-                <div class="group">
-                    <label for="Location" class="distence">
-                        <strong>Location</strong>
-                    </label> <br>
-                    <input type="button" id="Location" class="input_text distence" value="新竹 Hsinchu" readonly>
-                    <div id="map" class="distence"> </div>
+                <div class="box">
+
+                    <div class="col-6 col-md-4 col-lg-3 d-flex my-2 card">
+                        <div class="item mx-3">
+
+                            <a href="#">
+                                <div class="img_box">
+                                    <img src="./1.jpg">
+                                </div>
+                            </a>
+
+                            <div class="text">
+                                <a href="#">惡魔靈魂</a>
+                                <p>(描述...)</p>
+                                <a href="#">Owner</a>
+                            </div>
+
+                            <div class="star">
+                                <i class="fas fa-star txt-grey"> </i>
+                                <i class="fas fa-star txt-grey"> </i>
+                                <i class="fas fa-star txt-grey"> </i>
+                                <i class="fas fa-star txt-grey"> </i>
+                                <i class="fas fa-star txt-grey"> </i>
+                            </div>
+
+                            <select name="rent_price" id="rent_price" class="input_text distence">
+                                <option value="0">$10 Daily</option>
+                                <option value="1">$50 Weekly</option>
+                                <option value="2">$180 Monthly</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-3 d-flex my-2 card">
+                        <div class="item mx-3">
+
+                            <a href="#">
+                                <div class="img_box">
+                                    <img src="./2.jpg">
+                                </div>
+                            </a>
+
+                            <div class="text">
+                                <a href="#">Godfall</a>
+                                <p>(描述...)</p>
+                                <a href="#">Owner</a>
+                            </div>
+
+                            <div class="star">
+                                <i class="fas fa-star txt-grey"> </i>
+                                <i class="fas fa-star txt-grey"> </i>
+                                <i class="fas fa-star txt-grey"> </i>
+                                <i class="fas fa-star txt-grey"> </i>
+                                <i class="fas fa-star txt-grey"> </i>
+                            </div>
+
+                            <select name="rent_price" id="rent_price" class="input_text distence">
+                                <option value="0">$5 Daily</option>
+                                <option value="1">$30 Weekly</option>
+                                <option value="2">$100 Monthly</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-3 d-flex my-2 card">
+                        <div class="item mx-3">
+
+                            <a href="#">
+                                <div class="img_box">
+                                    <img src="./3.jpg">
+                                </div>
+                            </a>
+
+                            <div class="text">
+                                <a href="#">馬力歐賽車</a>
+                                <p>(描述...)</p>
+                                <a href="#">Owner</a>
+                            </div>
+
+                            <div class="star">
+                                <i class="fas fa-star txt-grey"> </i>
+                                <i class="fas fa-star txt-grey"> </i>
+                                <i class="fas fa-star txt-grey"> </i>
+                                <i class="fas fa-star txt-grey"> </i>
+                                <i class="fas fa-star txt-grey"> </i>
+                            </div>
+
+                            <select name="rent_price" id="rent_price" class="input_text distence">
+                                <option value="0">$20 Daily</option>
+                                <option value="1">$100 Weekly</option>
+                                <option value="2">$300 Monthly</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-3 d-flex my-2 card">
+                        <div class="item mx-3">
+
+                            <a href="#">
+                                <div class="img_box">
+                                    <img src="./4.jpg">
+                                </div>
+                            </a>
+
+                            <div class="text">
+                                <a href="#">動物森友會</a>
+                                <p>(描述...)</p>
+                                <a href="#">Owner</a>
+                            </div>
+                            
+                            <div class="star">
+                                <i class="fas fa-star txt-grey"> </i>
+                                <i class="fas fa-star txt-grey"> </i>
+                                <i class="fas fa-star txt-grey"> </i>
+                                <i class="fas fa-star txt-grey"> </i>
+                                <i class="fas fa-star txt-grey"> </i>
+                            </div>
+
+                            <select name="rent_price" id="rent_price" class="input_text distence">
+                                <option value="0">$8 Daily</option>
+                                <option value="1">$40 Weekly</option>
+                                <option value="2">$150 Monthly</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-3 d-flex my-2 card">
+                        <div class="item mx-3">
+
+                            <a href="#">
+                                <div class="img_box">
+                                    <img src="./5.jpg">
+                                </div>
+                            </a>
+
+                            <div class="text">
+                                <a href="#">PS5主機</a>
+                                <p>(描述...)</p>
+                                <a href="#">Owner</a>
+                            </div>
+
+                            <div class="star">
+                                <i class="fas fa-star txt-grey"> </i>
+                                <i class="fas fa-star txt-grey"> </i>
+                                <i class="fas fa-star txt-grey"> </i>
+                                <i class="fas fa-star txt-grey"> </i>
+                                <i class="fas fa-star txt-grey"> </i>
+                            </div>
+
+                            <select name="rent_price" id="rent_price" class="input_text distence">
+                                <option value="0">$4 Daily</option>
+                                <option value="1">$20 Weekly</option>
+                                <option value="2">$70 Monthly</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-3 d-flex my-2 card">
+
+                        <div class="item mx-3">
+                            <a href="#">
+                                <div class="img_box">
+                                    <img src="./6.jpg">
+                                </div>
+                            </a>
+
+                            <div class="text">
+                                <a href="#">Switch主機</a>
+                                <p>(描述...)</p>
+                                <a href="#">Owner</a>
+                            </div>
+
+                            <div class="star">
+                                <i class="fas fa-star txt-grey"> </i>
+                                <i class="fas fa-star txt-grey"> </i>
+                                <i class="fas fa-star txt-grey"> </i>
+                                <i class="fas fa-star txt-grey"> </i>
+                                <i class="fas fa-star txt-grey"> </i>
+                            </div>
+
+                            <select name="rent_price" id="rent_price" class="input_text distence">
+                                <option value="0">$3 Daily</option>
+                                <option value="1">$15 Weekly</option>
+                                <option value="2">$50 Monthly</option>
+                            </select>
+                        </div>
+                    </div>
+
+
                 </div>
 
-                <div class="group">
-                    <label for="Sort-by" class="distence">
-                        <strong>Sort by</strong>
-                    </label> <br>
-                    <input type="radio" id="relevance" name="Sort-by" value="Relevance">
-                    <label for="relevance">Relevance</label><br>
-
-                    <input type="radio" id="price" name="Sort-by" value="Price">
-                    <label for="price">Price</label><br>
-
-                    <input type="radio" id="distance" name="Sort-by" value="Distance">
-                    <label for="distance">Distance</label><br>
-                </div>
-
-                <div class="group">
-                    <label for="Condition" class="distence">
-                        <strong>Condition</strong>
-                    </label> <br>
-
-                    <input type="checkbox" id="check1" name="check1" value="JustLikeNew">
-                    <label for="check1">Just Like New</label><br>
-
-                    <input type="checkbox" id="check2" name="check2" value="GentlyLoved">
-                    <label for="check2">Gently Loved</label><br>
-
-                    <input type="checkbox" id="check3" name="check3" value="Decent">
-                    <label for="check3">Decent</label><br>
-
-                    <input type="checkbox" id="check4" name="check4" value="HasSomeCharacter">
-                    <label for="check4">Has Some Character</label><br>
-                </div>
-
-                <div class="group">
-                    <label for="Budget" class="distence">
-                        <strong>Budget</strong>
-                    </label> <br>
-                    <select name="Rate" id="Rate" class="input_text distence">
-                        <option value="0">Type of Rate</option>
-                        <option value="1">Hourly</option>
-                        <option value="2">Daily</option>
-                        <option value="3">Weekly</option>
-                        <option value="4">Monthly</option>
-                    </select>
-                    <input type="reset" value = "Clear Filters" class="distence"> <br>
-                    <input type="submit" value = "Filter My Results" class="distence filter_result">
-                </div>
-            </form>
-        </div>
-
-        <!-- Right -->
-        <div class="col-md-9 col-lg-9 right">
-            <h2>電視遊戲</h2>
-
-            <div class="box">
-                <div class="item">
-                    <div class="img_box"> 
-                        <img src="./1.jpg"> 
-                    </div>
-                    <a href="#">惡魔靈魂</a>
-                    <div>
-                        <i class="fas fa-star txt-grey"> </i>
-                        <i class="fas fa-star txt-grey"> </i>
-                        <i class="fas fa-star txt-grey"> </i>
-                        <i class="fas fa-star txt-grey"> </i>
-                        <i class="fas fa-star txt-grey"> </i>
-                    </div>
-                    <select name="rent_price" id="rent_price" class="input_text distence">
-                        <option value="0">$10 Daily</option>
-                        <option value="1">$50 Weekly</option>
-                        <option value="2">$180 Monthly</option>
-                    </select>
-                </div>
-
-                <div class="item">
-                    <div class="img_box"> 
-                        <img src="./2.jpg">
-                    </div>
-                    <a href="#">Godfall</a>
-                    <div>
-                        <i class="fas fa-star txt-grey"> </i>
-                        <i class="fas fa-star txt-grey"> </i>
-                        <i class="fas fa-star txt-grey"> </i>
-                        <i class="fas fa-star txt-grey"> </i>
-                        <i class="fas fa-star txt-grey"> </i>
-                    </div>
-                    <select name="rent_price" id="rent_price" class="input_text distence">
-                        <option value="0">$5  Daily</option>
-                        <option value="1">$30 Weekly</option>
-                        <option value="2">$100 Monthly</option>
-                    </select>
-                </div>
-
-                <div class="item">
-                    <div class="img_box"> 
-                        <img src="./3.jpg">
-                    </div>
-                    <a href="#">馬力歐賽車</a>
-                    <div>
-                        <i class="fas fa-star txt-grey"> </i>
-                        <i class="fas fa-star txt-grey"> </i>
-                        <i class="fas fa-star txt-grey"> </i>
-                        <i class="fas fa-star txt-grey"> </i>
-                        <i class="fas fa-star txt-grey"> </i>
-                    </div>
-                    <select name="rent_price" id="rent_price" class="input_text distence">
-                        <option value="0">$20 Daily</option>
-                        <option value="1">$100 Weekly</option>
-                        <option value="2">$300 Monthly</option>
-                    </select>
-                </div>
-                <div class="item">
-                    <div class="img_box"> 
-                        <img src="./4.jpg">
-                    </div>
-                    <a href="#">動物森友會</a>
-                    <div>
-                        <i class="fas fa-star txt-grey"> </i>
-                        <i class="fas fa-star txt-grey"> </i>
-                        <i class="fas fa-star txt-grey"> </i>
-                        <i class="fas fa-star txt-grey"> </i>
-                        <i class="fas fa-star txt-grey"> </i>
-                    </div>
-                    <select name="rent_price" id="rent_price" class="input_text distence">
-                        <option value="0">$8 Daily</option>
-                        <option value="1">$40 Weekly</option>
-                        <option value="2">$150 Monthly</option>
-                    </select>
-                </div>
-
-                <div class="item">
-                    <div class="img_box"> 
-                        <img src="./5.jpg">
-                    </div>
-                    <a href="#">PS5主機</a>
-                    <div>
-                        <i class="fas fa-star txt-grey"> </i>
-                        <i class="fas fa-star txt-grey"> </i>
-                        <i class="fas fa-star txt-grey"> </i>
-                        <i class="fas fa-star txt-grey"> </i>
-                        <i class="fas fa-star txt-grey"> </i>
-                    </div>
-                    <select name="rent_price" id="rent_price" class="input_text distence">
-                        <option value="0">$4 Daily</option>
-                        <option value="1">$20 Weekly</option>
-                        <option value="2">$70 Monthly</option>
-                    </select>
-                </div>
-
-                <div class="item">
-                    <div class="img_box"> 
-                        <img src="./6.jpg">
-                    </div>
-                    <a href="#">Switch主機</a>
-                    <div>
-                        <i class="fas fa-star txt-grey"> </i>
-                        <i class="fas fa-star txt-grey"> </i>
-                        <i class="fas fa-star txt-grey"> </i>
-                        <i class="fas fa-star txt-grey"> </i>
-                        <i class="fas fa-star txt-grey"> </i>
-                    </div>
-                    <select name="rent_price" id="rent_price" class="input_text distence">
-                        <option value="0">$3 Daily</option>
-                        <option value="1">$15 Weekly</option>
-                        <option value="2">$50 Monthly</option>
-                    </select>
-                </div>
-                
             </div>
 
         </div>
-
-    </div>
-
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
@@ -330,7 +473,7 @@
 
     <script>
         let map = L.map('map', {
-            center: [23.6, 121],
+            center: [23.7, 121],
             zoom: 7
         });
 
