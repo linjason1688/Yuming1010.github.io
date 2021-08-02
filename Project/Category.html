@@ -58,7 +58,7 @@
         } */
 
         .group {
-            margin: 5px 6px;
+            margin: 8px 10px;
         }
 
         .input_text {
@@ -77,24 +77,24 @@
 
         }
 
-        .btn_clear {
-            width: 25%;
+        .clear{
+            width: 92px;
             height: 35px;
             text-align: center;
             text-align-last: center;
             border-radius: 0.4rem;
-            border-color: rgb(221, 226, 230);
+            border-color:rgb(221, 226, 230);
             background-color: #ffffff;
             font-size: 12px;
         }
 
         .distence {
-            margin: 1px 0 8px 0;
+            margin: 5px 0 8px 0;
         }
 
         #map {
-            height: 340px;
             width: 100%;
+            height: 172px;
         }
 
         .filter_result {
@@ -115,6 +115,7 @@
             flex-wrap: wrap;
             background-color: #f9f9f9;
             border:transparent;
+            
             /* flex-direction: column; */
         }
 
@@ -130,10 +131,11 @@
             background-color: #ffffff;
             border: 1px solid rgb(221, 226, 230);
             border-radius: 0.4rem;
+            /* margin: 2vh; */
         }
 
         .items img {
-            width:92%;
+            width:100%;
         }
 
         .items a{
@@ -142,6 +144,8 @@
             color:black;
             font-size: 17px;
             display: flex;
+            justify-items: center;
+            margin-right: 7px;
         }
 
         .items a:hover{
@@ -166,7 +170,7 @@
                             <strong>Search</strong>
                         </label> <br>
 
-                        <input type="text" id="Search" class="input_text distence" placeholder="Item Name or Space">
+                        <input type="text" id="Search" class="btn input_text distence" placeholder="Item Name or Space">
                         <select name="Category" id="Category" class="input_text distence">
                             <option value="0">Select a Category</option>
                             <option value="1">交通工具</option>
@@ -183,7 +187,7 @@
                         <label for="Location" class="distence">
                             <strong>Location</strong>
                         </label> <br>
-                        <input type="button" id="Location" class="input_text distence" value="新竹 Hsinchu" readonly>
+                        <input type="button" id="Location" class="btn btn-default input_text distence" value="新竹 Hsinchu" readonly>
                         <div id="map" class="distence"> </div>
                     </div>
 
@@ -230,7 +234,8 @@
                             <option value="3">Weekly</option>
                             <option value="4">Monthly</option>
                         </select>
-                        <input type="reset" value="Clear Filters" class="btn_clear distence"> <br>
+
+                        <button type="reset"class="btn btn-default clear distence"> Clear Filters </button>
                         <input type="submit" value="Filter My Results" class="distence filter_result">
                     </div>
                 </form>
@@ -244,8 +249,8 @@
 
                 <div class="box">
 
-                    <div class="col-6 col-md-4 col-lg-4 d-flex my-2 card">
-                        <div class="mx-2 box-in">
+                    <div class="col-6 col-lg-4 d-flex my-2 card">
+                        <div class="mx-3 box-in">
                             <a href="#">
                                 <div class="items">
                                     <img src="https://picsum.photos/800/800/?random=1">
@@ -255,8 +260,8 @@
                         </div>
                     </div>
 
-                    <div class="col-6 col-md-4 col-lg-4 d-flex my-2 card">
-                        <div class="mx-2 box-in">
+                    <div class="col-6 col-lg-4 d-flex my-2 card">
+                        <div class="mx-3 box-in">
                             <a href="#">
                                 <div class="items">
                                     <img src="https://picsum.photos/800/800/?random=2">
@@ -266,8 +271,8 @@
                         </div>
                     </div>
 
-                    <div class="col-6 col-md-4 col-lg-4 d-flex mx-0 my-2 card">
-                        <div class="mx-2 box-in">
+                    <div class="col-6 col-lg-4 d-flex mx-0 my-2 card">
+                        <div class="mx-3 box-in">
                             <a href="#">
                                 <div class="items">
                                     <img src="https://picsum.photos/800/800/?random=3">
@@ -277,8 +282,8 @@
                         </div>
                     </div>
 
-                    <div class="col-6 col-md-4 col-lg-4 d-flex mx-0 my-2 card">
-                        <div class="mx-2 box-in">
+                    <div class="col-6 col-lg-4 d-flex mx-0 my-2 card">
+                        <div class="mx-3 box-in">
                             <a href="#">
                                 <div class="items">
                                     <img src="https://picsum.photos/800/800/?random=4">
@@ -288,8 +293,8 @@
                         </div>
                     </div>
 
-                    <div class="col-6 col-md-4 col-lg-4 d-flex mx-0 my-2 card">
-                        <div class="mx-2 box-in">
+                    <div class="col-6 col-lg-4 d-flex mx-0 my-2 card">
+                        <div class="mx-3 box-in">
                             <a href="#">
                                 <div class="items">
                                     <img src="https://picsum.photos/800/800/?random=5">
@@ -299,8 +304,8 @@
                         </div>
                     </div>
 
-                    <div class="col-6 col-md-4 col-lg-4 d-flex mx-0 my-2 card">
-                        <div class="mx-2 box-in">
+                    <div class="col-6 col-lg-4 d-flex mx-0 my-2 card">
+                        <div class="mx-3 box-in">
                             <a href="#">
                                 <div class="items">
                                     <img src="https://picsum.photos/800/800/?random=6">
@@ -310,8 +315,8 @@
                         </div>
                     </div>
 
-                    <div class="col-6 col-md-4 col-lg-4 d-flex mx-0 my-2 card">
-                        <div class="mx-2 box-in">
+                    <div class="col-6 col-lg-4 d-flex mx-0 my-2 card">
+                        <div class="mx-3 box-in">
                             <a href="#">
                                 <div class="items">
                                     <img src="https://picsum.photos/800/800/?random=7">
@@ -337,8 +342,8 @@
 
     <script>
         let map = L.map('map', {
-            center: [23.7, 121],
-            zoom: 7
+            center: [24.9, 121],
+            zoom: 8
         });
 
         let osmUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
@@ -352,3 +357,5 @@
     </script>
 
 </body>
+
+</html>
