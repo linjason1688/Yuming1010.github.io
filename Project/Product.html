@@ -67,22 +67,22 @@
             text-align: center;
             text-align-last: center;
             border-radius: 0.4rem;
-            border-color:rgb(221, 226, 230);
+            border-color: rgb(221, 226, 230);
             background-color: #ffffff;
-            margin:0 1px;
+            margin: 0 1px;
         }
 
-        .input_text:focus{
+        .input_text:focus {
             border-color: rgba(252, 141, 97, 1);
         }
 
-        .clear{
+        .clear {
             width: 92px;
             height: 35px;
             text-align: center;
             text-align-last: center;
             border-radius: 0.4rem;
-            border-color:rgb(221, 226, 230);
+            border-color: rgb(221, 226, 230);
             background-color: #ffffff;
             font-size: 12px;
         }
@@ -112,12 +112,35 @@
         .card {
             background-color: #f9f9f9;
             border: transparent;
+        }
 
+        .card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+            background-color:wheat;
         }
 
         .item {
+            display: flex;
+            flex-wrap:wrap;
             flex-direction: column;
             text-align: left;
+        }
+
+        /* .item .text { */
+            /* border: 1px solid black; */
+            /* height: 90px; */
+            /* overflow: scroll; */
+            /* margin: 0 0 0 0; */
+        /* } */
+        
+
+        .item .mile {
+            text-align: end;
+            padding: 10px;
+            border: 1px solid rgb(222, 226, 230);
+            border-top-left-radius: 0.4rem;
+            border-top-right-radius: 0.4rem;
         }
 
         .item .img_box {
@@ -125,6 +148,7 @@
             border: 1px solid rgb(222, 226, 230);
             border-radius: 0.4rem;
             width: 100%;
+            margin-bottom: 10px;
         }
 
         .item img {
@@ -132,55 +156,77 @@
         }
 
         .item a {
-            font-size: 18px;
+            font-size: 12px;
             text-decoration: none;
             color: black;
         }
 
         .item a:hover {
             text-decoration: underline;
-            color: tomato;
+            color: blue;
         }
 
-        .item i {
-            font-size: 12px;
-        }
-
-        .item .text{
+        /* .item .text {
             display: flex;
             flex-direction: column;
-        }
+        } */
 
         .item .text p {
-            height: 80px;
-            overflow: auto;
-            flex-grow:1;
+            height: 100px;
+            overflow: scroll;
+            border: 1px solid black;
+            padding: 0 10px;
+            margin-bottom: 5px;
         }
 
-        .item .text p{
+        /* .item .text p {
             display: inline;
             font-size: 13px;
-            flex-grow:1;
-            margin:0;
-        }
+            flex-grow: 1;
+            margin: 0;
+        } */
 
-        .item .text a{
+        /* .item .text a {
             display: inline;
             font-size: 17px;
+            margin: 0;
+        } */
+
+        .card-title{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
             margin:0;
         }
 
-        .star{
-            margin: 0 0 10px 0;
+        .star {
+            font-size: 5px;
             display: inline-flex;
+            align-items: center;
+            margin:0 0 8px 0;
         }
+
+        .title-name {
+            margin: 0;
+            align-items: center;
+            
+        }
+
+        h2{
+            font-size: 18px;
+        }
+
+        p{
+            font-size: 14px;
+        }
+
     </style>
 </head>
 
 <body>
     <div class="bigbox">
 
-        <div class="row pt-lg-3">
+        <div class="row pt-lg-3 px-2">
 
             <!-- Left -->
             <div class="col-lg-3 px-2 mx-0 left">
@@ -216,7 +262,8 @@
                             <strong>Location</strong>
                         </label> <br>
 
-                        <input type="button" id="Location" class="btn btn-default input_text distence" value="新竹 Hsinchu" readonly>
+                        <input type="button" id="Location" class="btn btn-default input_text distence"
+                            value="新竹 Hsinchu" readonly>
                         <div id="map" class="distence"> </div>
                     </div>
 
@@ -263,8 +310,8 @@
                             <option value="3">Weekly</option>
                             <option value="4">Monthly</option>
                         </select>
-                    
-                        <button type="reset"class="btn btn-default clear distence"> Clear Filters </button>
+
+                        <button type="reset" class="btn btn-default clear distence"> Clear Filters </button>
                         <input type="submit" value="Filter My Results" class="distence filter_result">
                     </div>
                 </form>
@@ -278,27 +325,40 @@
 
                 <div class="box">
 
-                    <div class="col-6 col-md-4 col-lg-3 d-flex my-2 card">
-                        <div class="item mx-3">
+                    <div class="col-6 col-md-4 col-lg-3 d-flex my-2 card px">
 
-                            <a href="#">
-                                <div class="img_box">
-                                    <img src="./1.jpg">
+                        <div class="item mx-2">
+
+                            <div class="mile"> 1.53 mi </div>
+
+                            
+                                <a href="#">
+                                    <div class="img_box">
+                                        <img src="./1.jpg">
+                                    </div>
+                                </a>
+                            
+                            <div class="card-title"> 
+
+                                <div class="title-name">
+                                    <a href="#">
+                                        <h2>惡魔靈魂</h2>
+                                    </a>
                                 </div>
-                            </a>
-
-                            <div class="text">
-                                <a href="#"> <h4>惡魔靈魂</h5> </a>
-                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat nam, voluptatibus sapiente fugit eaque beatae ipsa, suscipit inventore, tenetur expedita accusantium deleniti! Recusandae aut eum soluta saepe voluptate repellendus temporibus?</p>
-                                <a href="#">Owner</a>
+                                
+                                <div class="star">
+                                    <i class="fas fa-star txt-grey"> </i>
+                                    <i class="fas fa-star txt-grey"> </i>
+                                    <i class="fas fa-star txt-grey"> </i>
+                                    <i class="fas fa-star txt-grey"> </i>
+                                    <i class="fas fa-star txt-grey"> </i>
+                                </div>
                             </div>
 
-                            <div class="star">
-                                <i class="fas fa-star txt-grey"> </i>
-                                <i class="fas fa-star txt-grey"> </i>
-                                <i class="fas fa-star txt-grey"> </i>
-                                <i class="fas fa-star txt-grey"> </i>
-                                <i class="fas fa-star txt-grey"> </i>
+                            <div class="text">
+
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus distinctio provident rerum? Dolorem velit assumenda earum debitis repellat sequi inventore necessitatibus, sapiente qui voluptate numquam, libero id corporis, minus aut?</p>
+                                <!-- <a href="#">Owner</a> -->
                             </div>
 
                             <select name="rent_price" id="rent_price" class="input_text distence">
@@ -309,39 +369,56 @@
                         </div>
                     </div>
 
+
                     <div class="col-6 col-md-4 col-lg-3 d-flex my-2 card">
-                        <div class="item mx-3">
 
-                            <a href="#">
-                                <div class="img_box">
-                                    <img src="./2.jpg">
+                        <div class="item mx-2">
+
+                            <div class="mile"> 1.53 mi </div>
+
+                                <a href="#">
+                                    <div class="img_box">
+                                        <img src="./2.jpg">
+                                    </div>
+                                </a>
+                            
+                            <div class="card-title"> 
+
+                                <div class="title-name">
+                                    <a href="#">
+                                        <h2>Godfall</h2>
+                                    </a>
                                 </div>
-                            </a>
-
-                            <div class="text">
-                                <a href="#"> <h4>Godfall</h4> </a>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit culpa dignissimos similique quam sequi recusandae!</p>
-                                <a href="#">Owner</a>
+                                
+                                <div class="star">
+                                    <i class="fas fa-star txt-grey"> </i>
+                                    <i class="fas fa-star txt-grey"> </i>
+                                    <i class="fas fa-star txt-grey"> </i>
+                                    <i class="fas fa-star txt-grey"> </i>
+                                    <i class="fas fa-star txt-grey"> </i>
+                                </div>
                             </div>
 
-                            <div class="star">
-                                <i class="fas fa-star txt-grey"> </i>
-                                <i class="fas fa-star txt-grey"> </i>
-                                <i class="fas fa-star txt-grey"> </i>
-                                <i class="fas fa-star txt-grey"> </i>
-                                <i class="fas fa-star txt-grey"> </i>
+                            <div class="text">
+
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus distinctio provident </p>
+                                <!-- <a href="#">Owner</a> -->
                             </div>
 
                             <select name="rent_price" id="rent_price" class="input_text distence">
-                                <option value="0">$5 Daily</option>
-                                <option value="1">$30 Weekly</option>
-                                <option value="2">$100 Monthly</option>
+                                <option value="0">$10 Daily</option>
+                                <option value="1">$50 Weekly</option>
+                                <option value="2">$180 Monthly</option>
                             </select>
                         </div>
                     </div>
 
+
                     <div class="col-6 col-md-4 col-lg-3 d-flex my-2 card">
-                        <div class="item mx-3">
+
+                        <div class="item mx-2">
+
+                            <div class="mile"> 1.53 mi </div>
 
                             <a href="#">
                                 <div class="img_box">
@@ -349,18 +426,26 @@
                                 </div>
                             </a>
 
-                            <div class="text">
-                                <a href="#"> <h4>馬力歐賽車</h4></a>
-                                <p>(描述...)</p>
-                                <a href="#">Owner</a>
+                            <div class="card-title"> 
+
+                                <div class="title-name">
+                                    <a href="#">
+                                        <h2>馬力歐賽車</h2>
+                                    </a>
+                                </div>
+                                
+                                <div class="star">
+                                    <i class="fas fa-star txt-grey"> </i>
+                                    <i class="fas fa-star txt-grey"> </i>
+                                    <i class="fas fa-star txt-grey"> </i>
+                                    <i class="fas fa-star txt-grey"> </i>
+                                    <i class="fas fa-star txt-grey"> </i>
+                                </div>
                             </div>
 
-                            <div class="star">
-                                <i class="fas fa-star txt-grey"> </i>
-                                <i class="fas fa-star txt-grey"> </i>
-                                <i class="fas fa-star txt-grey"> </i>
-                                <i class="fas fa-star txt-grey"> </i>
-                                <i class="fas fa-star txt-grey"> </i>
+                            <div class="text">
+                                <p>(描述...)</p>
+                                <!-- <a href="#">Owner</a> -->
                             </div>
 
                             <select name="rent_price" id="rent_price" class="input_text distence">
@@ -372,7 +457,10 @@
                     </div>
 
                     <div class="col-6 col-md-4 col-lg-3 d-flex my-2 card">
-                        <div class="item mx-3">
+
+                        <div class="item mx-2">
+
+                            <div class="mile"> 1.53 mi </div>
 
                             <a href="#">
                                 <div class="img_box">
@@ -380,19 +468,28 @@
                                 </div>
                             </a>
 
+                            <div class="card-title"> 
+
+                                <div class="title-name">
+                                    <a href="#">
+                                        <h2>動物森友會</h2>
+                                    </a>
+                                </div>
+                                
+                                <div class="star">
+                                    <i class="fas fa-star txt-grey"> </i>
+                                    <i class="fas fa-star txt-grey"> </i>
+                                    <i class="fas fa-star txt-grey"> </i>
+                                    <i class="fas fa-star txt-grey"> </i>
+                                    <i class="fas fa-star txt-grey"> </i>
+                                </div>
+                            </div>
+
                             <div class="text">
-                                <a href="#"> <h4>動物森友會</h4> </a>
                                 <p>(描述...)</p>
-                                <a href="#">Owner</a>
+                                <!-- <a href="#">Owner</a> -->
                             </div>
-                            
-                            <div class="star">
-                                <i class="fas fa-star txt-grey"> </i>
-                                <i class="fas fa-star txt-grey"> </i>
-                                <i class="fas fa-star txt-grey"> </i>
-                                <i class="fas fa-star txt-grey"> </i>
-                                <i class="fas fa-star txt-grey"> </i>
-                            </div>
+
 
                             <select name="rent_price" id="rent_price" class="input_text distence">
                                 <option value="0">$8 Daily</option>
@@ -403,7 +500,10 @@
                     </div>
 
                     <div class="col-6 col-md-4 col-lg-3 d-flex my-2 card">
-                        <div class="item mx-3">
+
+                        <div class="item mx-2">
+
+                            <div class="mile"> 1.53 mi </div>
 
                             <a href="#">
                                 <div class="img_box">
@@ -411,21 +511,29 @@
                                 </div>
                             </a>
 
+                            <div class="card-title"> 
+
+                                <div class="title-name">
+                                    <a href="#">
+                                        <h2>PS5盒</h2>
+                                    </a>
+                                </div>
+                                
+                                <div class="star">
+                                    <i class="fas fa-star txt-grey"> </i>
+                                    <i class="fas fa-star txt-grey"> </i>
+                                    <i class="fas fa-star txt-grey"> </i>
+                                    <i class="fas fa-star txt-grey"> </i>
+                                    <i class="fas fa-star txt-grey"> </i>
+                                </div>
+                            </div>
+
                             <div class="text">
-                                <a href="#"> <h4>PS5主機</h4> </a>
                                 <p>(描述...)</p>
-                                <a href="#">Owner</a>
+                                <!-- <a href="#">Owner</a> -->
                             </div>
 
-                            <div class="star">
-                                <i class="fas fa-star txt-grey"> </i>
-                                <i class="fas fa-star txt-grey"> </i>
-                                <i class="fas fa-star txt-grey"> </i>
-                                <i class="fas fa-star txt-grey"> </i>
-                                <i class="fas fa-star txt-grey"> </i>
-                            </div>
-
-                            <select name="rent_price" id="rent_price" class="input_text distence">
+                            <select name="rent_price" id="rent_price" class="input_text">
                                 <option value="0">$4 Daily</option>
                                 <option value="1">$20 Weekly</option>
                                 <option value="2">$70 Monthly</option>
@@ -435,25 +543,36 @@
 
                     <div class="col-6 col-md-4 col-lg-3 d-flex my-2 card">
 
-                        <div class="item mx-3">
+                        <div class="item mx-2">
+
+                            <div class="mile"> 1.53 mi </div>
+
                             <a href="#">
                                 <div class="img_box">
                                     <img src="./6.jpg">
                                 </div>
                             </a>
 
-                            <div class="text">
-                                <a href="#"> <h4>Switch主機</h4> </a>
-                                <p>(描述...)</p>
-                                <a href="#">Owner</a>
+                            <div class="card-title"> 
+
+                                <div class="title-name">
+                                    <a href="#">
+                                        <h2>Switch盒</h2>
+                                    </a>
+                                </div>
+                                
+                                <div class="star">
+                                    <i class="fas fa-star txt-grey"> </i>
+                                    <i class="fas fa-star txt-grey"> </i>
+                                    <i class="fas fa-star txt-grey"> </i>
+                                    <i class="fas fa-star txt-grey"> </i>
+                                    <i class="fas fa-star txt-grey"> </i>
+                                </div>
                             </div>
 
-                            <div class="star">
-                                <i class="fas fa-star txt-grey"> </i>
-                                <i class="fas fa-star txt-grey"> </i>
-                                <i class="fas fa-star txt-grey"> </i>
-                                <i class="fas fa-star txt-grey"> </i>
-                                <i class="fas fa-star txt-grey"> </i>
+                            <div class="text">
+                                <p>(描述...)</p>
+                                <!-- <a href="#">Owner</a> -->
                             </div>
 
                             <select name="rent_price" id="rent_price" class="input_text distence">
