@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+
+    <title>Ruckify</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .box {
+            max-width: 1140px;
+            margin: auto;
+        }
+
+        .left {
+            max-width: 740px;
+        }
+
+        .rectangle {
+            border: 1px solid black;
+            width: 600px;
+            height: 380px;
+        }
+
+        .title {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .heading_size {
+            font-size: 18px;
+            font-weight: 900;
+        }
+
+        .description_text {
+            font-size: 15px;
+        }
+
+        .description_text a {
+            text-decoration: none;
+            font-weight: 900;
+            color: #5BBDC5;
+        }
+
+        #collapse_text2 {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .p4 strong {
+            color: #FF8B5A;
+        }
+
+        .title{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin:0;
+        }
+
+        .rotate{
+            transform: rotate(-90deg);
+        }
+
+        .fa-caret-down{
+            font-size: 40px;
+            color: black;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="box">
+
+        <div class="left">
+
+            <br>
+
+            <div class="rectangle"> <h2>商品圖片</h2> </div>
+        
+            <hr>
+
+            <Section class="col-12">
+
+                <div class="">
+                    <div class="">
+                        <h2 class="heading_size">
+                            sold on a monday: a novel
+                            <span> - perfect</span>
+                        </h2>
+                    </div>
+                </div>
+
+                <div class="">
+                    <div class="description_text">
+                        <div id="">
+                            <p id="p1">
+                                Welcome! This item is an example of one that Ruckify might have available. This is not a
+                                real item but one that acts to help us find what you are looking for. If you wish to
+                                rent
+                                this item or one that is similar, we will do everything to facilitate
+                                <span id="span1">
+                                    ...
+                                    <span class="link1" id="link1">
+                                        <a data-bs-toggle="collapse" href="#collapse_text1"
+                                            aria-controls="collapse_text1">
+                                            Read more
+                                        </a>
+                                    </span>
+                                </span>
+
+                                <span class="collapse" id="collapse_text1" aria-expanded="false">
+                                    your rental request. Submit a request and a member from our Customer Success Team
+                                    will be in
+                                    touch with you.
+                                </span>
+
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </Section>
+
+            <hr>
+
+            <div class="rectangle">
+                <h2>地圖</h2>
+            </div>
+
+            <hr>
+            <Section class="col-12">
+
+                <div class="title">
+                    <div class="title-left">
+                        <h2 class="heading_size">
+                            Available Times
+                        </h2>
+                    </div>
+
+                    <div class="title-right">
+                        <a data-bs-toggle="collapse" href="#collapse_textTwo" aria-expanded="false"
+                        aria-controls="collapse_textTwo">
+                            <i class="fas fa-caret-down rotate" id="arrow1"></i>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="description_text">
+                    <div id="">
+                        <p class="p2">
+                            
+                            <span id="text2">
+
+                                <span class="link2" id="link2">
+                                    <a data-bs-toggle="collapse" href="#collapse_textTwo" aria-expanded="false"
+                                        aria-controls="collapse_textTwo">
+                                        Read more...
+                                    </a>
+                                </span>
+
+                            </span>
+
+                            <div class="collapse" id="collapse_textTwo" aria-expanded="false">
+                                A Ruckify driver can deliver to and return the item from your location:
+                            </div>
+                        </p>
+                    </div>
+
+                </div>
+
+            </Section>
+            <hr>
+
+            <Section class="col-12">
+
+                <div class="">
+                    <div class="">
+                        <h2 class="heading_size">
+                            Keep in Mind
+                        </h2>
+                    </div>
+                </div>
+
+                <div class="">
+                    <div class="description_text">
+
+                        <div id="">
+                            <p>
+                                You remain fully liable to the Owner for any damage, loss, or theft of the item during
+                                the rental period.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </Section>
+
+            <hr>
+
+            <Section class="col-12">
+
+                <div class="title">
+                    <div class="title-left">
+                        <h2 class="heading_size">
+                            Cancellation
+                        </h2>
+                    </div>
+
+                    <div class="title-right">
+                        <a data-bs-toggle="collapse" href="#collapse_text4" aria-expanded="false"
+                        aria-controls="collapse_text4">
+                            <i class="fas fa-caret-down rotate" id="arrow2"></i>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="description_text">
+                    <div id="">
+                        <p class="p4">
+                            Cancellation policy is <strong>Easy-Going.</strong> <br>
+
+                            Full refund will be issued if cancelled greater than 2 days before <br>
+                            <span id="text4">
+
+                                <span class="link4" id="link4">
+                                    <a data-bs-toggle="collapse" href="#collapse_text4" aria-expanded="false"
+                                        aria-controls="collapse_text4">
+                                        Read more...
+                                    </a>
+                                </span>
+
+                            </span>
+
+                            <span class="collapse" id="collapse_text4" aria-expanded="false">
+                                <br>
+                                If the member booking the item sends a cancellation notification at least 48 hours
+                                before the booking Start Date and Time, they are entitled to a full refund minus the
+                                booking fee, and payment processing fee. The item price and any additional price
+                                including delivery will be refunded.
+                            </span>
+                        </p>
+                    </div>
+
+                </div>
+
+            </Section>
+
+            <hr>
+
+        </div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+
+    <script>
+        let span1 = document.getElementById("span1");
+        let link1 = document.getElementById("link1");
+        let collapse_text1 = document.getElementById("collapse_text1");
+        link1.addEventListener('click', function () {
+            span1.classList.add('hide');
+            collapse_text1.setAttribute('class', 'collapse.show');
+        });
+
+        let link2 = document.getElementById("link2");
+        let collapse_textTwo = document.getElementById("collapse_textTwo");
+        link2.addEventListener('click', function () {
+            link2.classList.add('hide');
+            // collapse_textTwo.setAttribute('class', 'collapse.show');
+        });
+
+
+        let link4 = document.getElementById("link4");
+        let collapse_text4 = document.getElementById("collapse_text4");
+        link4.addEventListener('click', function () {
+            link4.classList.add('hide');
+            // collapse_text4.setAttribute('class', 'collapse.show');
+            
+        });
+
+        let x1 = 0;
+        let arrow1 = document.getElementById("arrow1");
+        arrow1.addEventListener('click', function(){
+            if(x1==0){
+                arrow1.classList.remove('rotate');
+                link2.classList.add('hide');
+                x1=1;
+            }
+
+            else if(x1==1){
+                arrow1.classList.add('rotate');
+                link2.classList.remove('hide');
+                x1=0;
+            }
+        });
+
+        let x2 = 0;
+        let arrow2 = document.getElementById("arrow2");
+        arrow2.addEventListener('click', function(){
+            if(x2==0){
+                arrow2.classList.remove('rotate');
+                link4.classList.add('hide');
+                x2=1;
+            }
+            else if(x2==1){
+                arrow2.classList.add('rotate');
+                link4.classList.remove('hide');
+                x2=0;
+            }
+        });
+
+    </script>
+
+
+</body>
+
+
+</html>
